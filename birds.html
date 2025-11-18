@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الطيور 🐦</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>الطيور 🐦</h1>
+    <a href="index.html">⬅ العودة للصفحة الرئيسية</a>
+</header>
+
+<main class="grid-pets">
+    <div class="pet">
+        <img src="images/b1.jpg" alt="بلبل">
+        <h3>طير روز</h3>
+        <p>السعر: 400 ريال<br>العدد المتوفر: 12</p>
+        <label>الكمية: <input type="number" min="1" max="12" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/b2.jpg" alt="كوكي">
+        <h3>طير كروان</h3>
+        <p>السعر: 450 ريال<br>العدد المتوفر: 7</p>
+        <label>الكمية: <input type="number" min="1" max="7" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/b3.jpg" alt="بيبو">
+        <h3>طير روز</h3>
+        <p>السعر: 500 ريال<br>العدد المتوفر: 19</p>
+        <label>الكمية: <input type="number" min="1" max="19" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/b4.jpg" alt="حسون">
+        <h3>طير روز</h3>
+        <p>السعر: 600 ريال<br>العدد المتوفر: 10</p>
+        <label>الكمية: <input type="number" min="1" max="10" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/b5.jpg" alt="ريشو">
+        <h3>طير كروان</h3>
+        <p>السعر: 700 ريال<br>العدد المتوفر: 15</p>
+        <label>الكمية: <input type="number" min="1" max="15" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/b6.jpg" alt="طوطي">
+        <h3>طير روز</h3>
+        <p>السعر: 900 ريال<br>العدد المتوفر: 5</p>
+        <label>الكمية: <input type="number" min="1" max="5" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+
+    <section class="cart-section">
+        <h2>🛒 سلتك</h2>
+        <ul id="cart"></ul>
+        <p id="total"></p>
+    </section>
+</main>
+
+<script src="cart.js"></script>
+</body>
+</html>

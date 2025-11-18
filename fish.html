@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأسماك 🐟</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>الأسماك 🐟</h1>
+    <a href="index.html">⬅ العودة للصفحة الرئيسية</a>
+</header>
+
+<main class="grid-pets">
+    <div class="pet">
+        <img src="images/f1.jpg" alt="سمكة البيتا">
+        <h3>البيتا</h3>
+        <p>السعر: 30 ريال<br>العدد المتوفر: 12</p>
+        <label>الكمية: <input type="number" min="1" max="12" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/f2.jpg" alt="سمكة نافاجو">
+        <h3>البيتا</h3>
+        <p>السعر: 40 ريال<br>العدد المتوفر: 18</p>
+        <label>الكمية: <input type="number" min="1" max="18" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/f3.jpg" alt="سمكة ملونة">
+        <h3>ملونة</h3>
+        <p>السعر: 35 ريال<br>العدد المتوفر: 9</p>
+        <label>الكمية: <input type="number" min="1" max="9" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/f4.jpg" alt="سمكة أنجل">
+        <h3>أنجل</h3>
+        <p>السعر: 50 ريال<br>العدد المتوفر: 15</p>
+        <label>الكمية: <input type="number" min="1" max="15" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/f5.jpg" alt="سمكة غواص">
+        <h3>غواص</h3>
+        <p>السعر: 60 ريال<br>العدد المتوفر: 8</p>
+        <label>الكمية: <input type="number" min="1" max="8" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/f6.jpg" alt="سمكة نيون">
+        <h3>نيون</h3>
+        <p>السعر: 55 ريال<br>العدد المتوفر: 22</p>
+        <label>الكمية: <input type="number" min="1" max="22" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+
+    <section class="cart-section">
+        <h2>🛒 سلتك</h2>
+        <ul id="cart"></ul>
+        <p id="total"></p>
+    </section>
+</main>
+
+<script src="cart.js"></script>
+</body>
+</html>

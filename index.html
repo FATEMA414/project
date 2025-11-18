@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صديقك الأليف</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <header>
+    <div class="banner-slider">
+        <img src="images/banner2.jpg" class="active" alt="بنر 1">
+            </div>
+</header>
+</header>
+
+<main class="horizontal-layout">
+    <section class="card adoption">
+        <a href="cats.html">
+            <h2>تبني القطط 🐱</h2>
+            <img src="images/cat4.jpg" alt="خلفية القطط">
+        </a>
+        <textarea placeholder="أضف رأيك هنا..."></textarea>
+    </section>
+
+    <section class="card birds">
+        <a href="birds.html">
+            <h2>طيور 🐦</h2>
+            <img src="images/birds1.jpg" alt="طيور">
+        </a>
+        <textarea placeholder="أضف رأيك هنا..."></textarea>
+    </section>
+
+    <section class="card fish">
+        <a href="fish.html">
+            <h2>أسماك 🐟</h2>
+            <img src="images/fish1.jpg" alt="أسماك">
+        </a>
+        <textarea placeholder="أضف رأيك هنا..."></textarea>
+    </section>
+
+    <section class="card health">
+        <a href="health.html">
+            <h2>صحة واهتمام 🌿</h2>
+            <img src="images/health1.jpg" alt="صحة واهتمام">
+        </a>
+        <textarea placeholder="أضف رأيك هنا..."></textarea>
+    </section>
+
+    <section class="card vet">
+        <h2>بيطرة 🩺</h2>
+        <img src="images/vat1.jpg" alt="صحة واهتمام">
+        <a class="btn" href="tel:+966500000000">📞 اتصل بالطبيب</a>
+    </section>
+</main>
+
+<footer>
+    <p>خدمة العملاء: <a href="tel:+966500000000">0500000000</a></p>
+    <p>© 2025 صديقك الأليف</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+</script>
+
+<script>
+let currentBanner = 0;
+const banners = document.querySelectorAll('.banner-slider img');
+
+setInterval(() => {
+    banners[currentBanner].classList.remove('active');
+    currentBanner = (currentBanner + 1) % banners.length;
+    banners[currentBanner].classList.add('active');
+}, 4000); 
+</script>
+</body>
+</html>

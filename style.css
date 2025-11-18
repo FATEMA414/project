@@ -1,0 +1,315 @@
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #e0e6dd;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+}
+
+.horizontal-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+section.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px;
+    min-width: 260px;
+    text-align: center;
+    flex: 0 0 auto;
+    transition: transform 0.3s;
+    background: #fff;
+}
+
+section.card:hover {
+    transform: translateY(-5px);
+}
+
+section.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6a994e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #527a3b;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer a {
+    color: #6a994e;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+section.adoption { background-color: #d9ed92; }
+section.birds { background-color: #b5ead7; }
+section.fish { background-color: #b0c4de; }
+section.health { background-color: #ffe5d9; }
+section.vet { background-color: #ffd6a5; }
+
+.rating span {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.rating span:hover,
+.rating span.active {
+    color: gold;
+}
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+
+
+.faq h2 {
+    margin-bottom: 10px;
+    color: #6a994e;
+}
+details {
+    margin: 8px 0;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form {
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+form h2 {
+    color: #6a994e;
+}
+form input, form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+form button {
+    padding: 12px 20px;
+    background: #6a994e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+form button:hover {
+    background: #527a3b;
+}
+
+.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+.dark-mode header,
+.dark-mode footer {
+    background: #1e1e1e;
+}
+.dark-mode section.card {
+    background: #1e1e1e;
+    color: #eee;
+}
+.toggle-dark {
+    margin: 10px;
+    padding: 8px 14px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-dark:hover {
+    background: #222;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 300px;
+    margin-top: 15px;
+    border-radius: 12px;
+}
+.horizontal-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+}
+@media screen and (max-width: 900px) {
+    .horizontal-layout {
+        grid-template-columns: 1fr;
+    }
+}
+.card.adoption {
+    background-image: url('images/cat4.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    color: white; 
+}
+.card.fish {
+    background-image: url('images/fish1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    color: white; 
+}
+.card.birds {
+    background-image: url('images/birds1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: flex;             /* تعديل للطيور فقط */
+    flex-direction: column;    /* تعديل للطيور فقط */
+    justify-content: space-between; /* تعديل للطيور فقط */
+}
+.card.health {
+    background-image: url('images/health1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    color: white; 
+}
+.grid-pets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-pets .pet {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-pets .pet img {
+    width: 100%;
+    max-width: 150px; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+} 
+
+.vertical-sections {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    padding: 20px;
+    max-width: 900px; 
+    margin: 30px auto; 
+    align-items: center; 
+}
+
+.vertical-sections .faq,
+.vertical-sections form {
+    width: 100%; 
+    max-width: 600px;
+    margin: 0; 
+}
+.grid-pets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ثلاث أعمدة */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* لتوسيط البوكسات */
+}
+
+.grid-pets .pet {
+    width: 300px; /* حجم البوكس */
+}
+
+.grid-pets .pet img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.banner-slider {
+    width: 100%;
+    max-width: 1600px;   /* حسب حجم الصورة الأصلي */
+    height: 400px;       /* ارتفاع الصورة */
+    margin: 20px auto;   /* توسيط أفقي ومسافة من الأعلى */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* يملأ البوكس بدون تشويه */
+    display: block;
+}
+
+.grid-pets .pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* يخلي العناصر موزعة بالتساوي */
+    align-items: center;
+    height: 100%; /* يضمن التناسق */
+}
+
+.grid-pets .pet textarea {
+    margin-top: auto; /* يخلي خانة أضف رأيك تنزل في نفس المكان بكل الكروت */
+}
+
+.grid-pets .pet img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صحة واهتمام 🌿</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>صحة واهتمام 🌿</h1>
+    <a href="index.html">⬅ العودة للصفحة الرئيسية</a>
+</header>
+
+<main class="grid-pets">
+    <div class="pet">
+        <img src="images/h1.jpg" alt="صندوق 2 لتر">
+        <h3>صندوق 2 لتربكس</h3>
+        <p>السعر: 30 ريال<br>العدد المتوفر: 10</p>
+        <label>الكمية: <input type="number" min="1" max="10" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h2.jpg" alt="مقص إضافي">
+        <h3>مقص إضافي</h3>
+        <p>السعر: 12 ريال<br>العدد المتوفر: 8</p>
+        <label>الكمية: <input type="number" min="1" max="8" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h3.jpg" alt="أكل القطط">
+        <h3>أكل القطط</h3>
+        <p>السعر: 80 ريال<br>العدد المتوفر: 12</p>
+        <label>الكمية: <input type="number" min="1" max="12" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h4.jpg" alt="أكل الحمام">
+        <h3>أكل الحمام</h3>
+        <p>السعر: 60 ريال<br>العدد المتوفر: 6</p>
+        <label>الكمية: <input type="number" min="1" max="6" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h5.jpg" alt="قلادة بنك">
+        <h3>قلادة بنك</h3>
+        <p>السعر: 40 ريال<br>العدد المتوفر: 5</p>
+        <label>الكمية: <input type="number" min="1" max="5" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h6.jpg" alt="قلادة زرقاء">
+        <h3>قلادة زرقاء</h3>
+        <p>السعر: 40 ريال<br>العدد المتوفر: 5</p>
+        <label>الكمية: <input type="number" min="1" max="5" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h7.jpg" alt="قفص طيور">
+        <h3>قفص طيور</h3>
+        <p>السعر: 390 ريال<br>العدد المتوفر: 6</p>
+        <label>الكمية: <input type="number" min="1" max="2" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h8.jpg" alt="قفص طيور">
+        <h3>قفص طيور</h3>
+        <p>السعر: 86 ريال<br>العدد المتوفر: 12</p>
+        <label>الكمية: <input type="number" min="1" max="2" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+    <div class="pet">
+        <img src="images/h9.jpg" alt="حلبة الماء والاكل">
+        <h3>حلبة الماء والاكل</h3>
+        <p>السعر: 33 ريال<br>العدد المتوفر: 3</p>
+        <label>الكمية: <input type="number" min="1" max="3" value="1" class="quantity"></label>
+        <button class="add-to-cart">أضف للسلة</button>
+    </div>
+
+    <section class="cart-section">
+        <h2>🛒 سلتك</h2>
+        <ul id="cart"></ul>
+        <p id="total"></p>
+    </section>
+</main>
+
+<script src="cart.js"></script>
+</body>
+</html>

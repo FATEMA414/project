@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <nav class="navbar">
+    <div class="logo">صديقك الأليف</div>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="cats.html">القطط</a></li>
+        <li><a href="birds.html">الطيور</a></li>
+        <li><a href="fish.html">الأسماك</a></li>
+        <li><a href="health.html">الصحة</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+    </ul>
+</nav>
+
 <header>
   <header>
     <div class="banner-slider">
@@ -76,5 +94,13 @@ setInterval(() => {
     banners[currentBanner].classList.add('active');
 }, 4000); 
 </script>
+    
+    <script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("open");
+}
+</script>
+
 </body>
+
 </html>

@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <nav class="navbar">
+
+<nav class="navbar">
     <div class="logo">صديقك الأليف</div>
 
     <div class="menu-icon" onclick="toggleMenu()">
@@ -21,10 +21,33 @@
         <li><a href="birds.html">الطيور</a></li>
         <li><a href="fish.html">الأسماك</a></li>
         <li><a href="health.html">الصحة</a></li>
-        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li>
+            <a href="#">الأسئلة الشائعة ▼</a>
+            <ul class="dropdown-faq">
+                <li>
+                    <details>
+                        <summary>كيف أتبنى حيوان أليف؟</summary>
+                        <p>تقدر تروح لصفحة التبني وتختار الحيوان اللي تحبه، وتتابع خطوات التبني.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>هل هناك رسوم للتبني؟</summary>
+                        <p>في بعض الحالات يكون هناك رسوم بسيطة لتغطية الرعاية الطبية.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>كيف أعتني بحيواني الجديد؟</summary>
+                        <p>صفحات الصحة والاهتمام فيها نصائح لكل نوع من الحيوانات.</p>
+                    </details>
+                </li>
+            </ul>
+        </li>
     </ul>
 </nav>
-
+    
+    
 <header>
   <header>
     <div class="banner-slider">
@@ -104,3 +127,4 @@ function toggleMenu() {
 </body>
 
 </html>
+

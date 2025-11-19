@@ -312,4 +312,42 @@ iframe {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+
+}
+
+/* قوائم الأسئلة الشائعة  */
+.nav-links li {
+    position: relative;
+}
+
+.dropdown-faq {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 250px;
+    z-index: 100;
+}
+
+.nav-links li:hover .dropdown-faq {
+    display: block;
+}
+
+.dropdown-faq details {
+    margin: 5px 0;
+}
+
+.dropdown-faq details summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-faq details p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    line-height: 1.3;
 }

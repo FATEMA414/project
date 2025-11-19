@@ -126,5 +126,142 @@ function toggleMenu() {
 
 </body>
 
+    // cart.js
+document.addEventListener("DOMContentLoaded", function () {
+  // جلب السلة من localStorage أو إنشاء جديدة
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+  const cartList = document.getElementById("cart");
+  const totalPriceEl = document.getElementById("total");
+  const cartCountEl = document.getElementById("cart-count"); // لإظهار عدد السلع
+
+  // حفظ السلة في المتصفح
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    if (!cartCountEl) return;
+    const sum = cart.reduce((s, it) => s + (it.quantity || 0), 0);
+    cartCountEl.innerText = sum;
+  }
+
+  // عرض محتوى السلة
+  function renderCart() {
+    if (!cartList || !totalPriceEl) return;
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item.name} - 
+        <input type="number" class="cart-qty" value="${item.quantity}" min="1" max="${item.available}" data-index="${index}" /> × 
+        ${item.price} ريال
+        <button class="remove-item" data-index="${index}">❌</button>
+      `;
+      cartList.appendChild(li);
+      total += item.price * item.quantity;
+    });
+
+    totalPriceEl.innerText = "المجموع: " + total + " ريال";
+
+    // ربط أزرار إزالة العناصر
+    const removeBtns = document.querySelectorAll(".remove-item");
+    removeBtns.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const idx = parseInt(btn.dataset.index, 10);
+        if (!isNaN(idx)) {
+          cart.splice(idx, 1);
+          saveCart();
+          renderCart();
+        }
+      });
+    });
+
+    // ربط تعديل الكمية مباشرة
+    const qtyInputs = document.querySelectorAll(".cart-qty");
+    qtyInputs.forEach(input => {
+      input.addEventListener("change", function () {
+        const idx = parseInt(input.dataset.index, 10);
+        let val = parseInt(input.value, 10);
+        if (isNaN(val) || val < 1) val = 1;
+        if (val > cart[idx].available) {
+          alert("الكمية المطلوبة أكبر من المخزون!");
+          val = cart[idx].available;
+        }
+        cart[idx].quantity = val;
+        saveCart();
+        renderCart();
+      });
+    });
+  }
+
+  // دالة مساعدة لقراءة السعر والكمية من العنصر .pet
+  function readPriceAndAvailable(petDiv) {
+    if (petDiv.dataset && petDiv.dataset.price && petDiv.dataset.available) {
+      const p = parseInt(petDiv.dataset.price, 10);
+      const a = parseInt(petDiv.dataset.available, 10);
+      if (!isNaN(p) && !isNaN(a)) return { price: p, available: a };
+    }
+
+    const pTag = petDiv.querySelector("p");
+    const text = pTag ? pTag.innerText : "";
+    const priceMatch = text.match(/السعر:\s*(\d+)/);
+    const availableMatch = text.match(/العدد المتوفر:\s*(\d+)/);
+    if (!priceMatch || !availableMatch) return null;
+
+    return {
+      price: parseInt(priceMatch[1], 10),
+      available: parseInt(availableMatch[1], 10),
+    };
+  }
+
+  // ربط أزرار الإضافة
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const petDiv = btn.closest(".pet") || btn.parentElement;
+      if (!petDiv) return alert("خطأ: لم يتم العثور على عنصر المنتج.");
+
+      const nameEl = petDiv.querySelector("h3");
+      if (!nameEl) return alert("خطأ: اسم المنتج غير موجود.");
+      const name = nameEl.innerText.trim();
+
+      const pa = readPriceAndAvailable(petDiv);
+      if (!pa) return alert("خطأ: لم أتمكن من قراءة السعر أو العدد المتوفر لهذا المنتج.");
+      const price = pa.price;
+      const available = pa.available;
+
+      const qtyInput = petDiv.querySelector(".quantity");
+      let quantity = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
+
+      if (quantity < 1) return alert("اختر كمية صحيحة (1 أو أكثر).");
+      if (quantity > available) return alert("الكمية المطلوبة أكبر من العدد المتوفر.");
+
+      const existing = cart.find(it => it.name === name);
+      if (existing) {
+        if (existing.quantity + quantity > available) {
+          alert("لا يوجد كمية كافية في المخزون!");
+          return;
+        }
+        existing.quantity += quantity;
+      } else {
+        cart.push({ name, price, quantity, available });
+      }
+
+      saveCart();
+      renderCart();
+    });
+  });
+
+  // عرض السلة عند التحميل
+  renderCart();
+  updateCartCount();
+});
+
+    
 </html>
+
 

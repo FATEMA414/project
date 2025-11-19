@@ -351,3 +351,85 @@ iframe {
     font-size: 0.9em;
     line-height: 1.3;
 }
+
+/* حاوية السلة */
+.cart-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* عنوان السلة */
+.cart-container h2 {
+    text-align: center;
+    color: #6a994e;
+    margin-bottom: 15px;
+}
+
+/* قائمة العناصر */
+#cart {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+#cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* أزرار إزالة العنصر */
+.remove-item {
+    background: #e63946;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-item:hover {
+    background: #a02832;
+}
+
+/* حقل الكمية */
+.cart-qty {
+    width: 50px;
+    margin: 0 8px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* إجمالي السعر */
+#total {
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* عداد السلة في الهيدر */
+#cart-count {
+    background: #6a994e;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+}
